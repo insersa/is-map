@@ -1,0 +1,72 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <parent>
+		<groupId>ch.inser.isejawa.pom</groupId>
+		<artifactId>is-pom-project</artifactId>
+        <version>6.0.4</version>
+  </parent>
+  
+  <groupId>ch.inser.isejawa</groupId>
+  <artifactId>is-map</artifactId>
+  <packaging>jar</packaging>
+    <version>6.0.4</version>
+  <name>${project.artifactId}</name>
+  
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+  	  	<!-- librairies internes -->
+  	<dependency>
+		<groupId>ch.inser.isejawa</groupId>
+		<artifactId>is-rest</artifactId>
+        <version>6.0.4</version>
+	</dependency>
+    <!-- logging -->
+	<dependency>
+		<groupId>org.apache.logging.log4j</groupId>
+		<artifactId>log4j-core</artifactId>
+	</dependency>
+	<!-- ws -->
+	<dependency>
+	    <groupId>jakarta.servlet</groupId>
+	    <artifactId>jakarta.servlet-api</artifactId>
+	    <scope>provided</scope>
+	</dependency>
+	<dependency>
+	    <groupId>jakarta.ws.rs</groupId>
+	    <artifactId>jakarta.ws.rs-api</artifactId>
+	</dependency>
+	<!-- Pour client http avec proxy -->
+	<dependency>
+		<groupId>org.jboss.resteasy</groupId>
+		<artifactId>resteasy-client</artifactId>
+	</dependency>
+	
+	<!-- Pour les tests -->
+	<dependency>
+		<groupId>junit</groupId>
+		<artifactId>junit</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.mockito</groupId>
+		<artifactId>mockito-all</artifactId>
+		<scope>test</scope>
+	</dependency>
+  </dependencies>
+  <distributionManagement>
+		<repository>
+			<id>gitlab-maven</id>
+			<url>http://gitlab.inser.ch:5061/api/v4/projects/188/packages/maven</url>
+		</repository>
+		<snapshotRepository>
+			<id>gitlab-maven</id>
+			<url>http://gitlab.inser.ch:5061/api/v4/projects/188/packages/maven</url>
+		</snapshotRepository>
+	</distributionManagement>
+</project>
